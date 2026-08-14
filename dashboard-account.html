@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Manage your Voltix Repair Lab account, notification preferences and password.">
+  <title>My Account — Voltix Repair Lab</title>
+  <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <script>
+    (function () {
+      var root = document.documentElement;
+      try {
+        var theme = localStorage.getItem('theme');
+        if (!theme) theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        root.setAttribute('data-theme', theme);
+        var dir = localStorage.getItem('dir');
+        if (dir === 'rtl' || dir === 'ltr') root.setAttribute('dir', dir);
+      } catch (e) {}
+    })();
+  </script>
+  <script>
+    (function () {
+      try {
+        var s = JSON.parse(localStorage.getItem('vx_session'));
+        if (!s || !s.email) window.location.replace('login.html');
+      } catch (e) { window.location.replace('login.html'); }
+    })();
+  </script>
+</head>
+<body data-page="dashboard" data-dash="account">
+
+  <div id="preloader" aria-hidden="true">
+    <svg class="preloader-bolt" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="#a0113d">
+      <path d="M13 2 4.5 13.5H11L9.5 22 19 9.5h-6.5L13 2Z"/>
+    </svg>
+  </div>
+
+  <div class="admin-body">
+    <div id="dashSide"></div>
+    <div class="admin-backdrop"></div>
+
+    <div class="admin-main">
+      <header class="admin-top">
+        <div class="d-flex align-items-center gap-3">
+          <button class="btn btn-icon side-toggle" id="sideOpen" type="button" aria-label="Open sidebar"><i class="fa-solid fa-bars"></i></button>
+          <div>
+            <p class="text-muted mb-1 small" id="topGreeting">Welcome back</p>
+            <h1 class="t-title">My account</h1>
+          </div>
+        </div>
+        <div class="d-flex align-items-center gap-2 flex-wrap">
+          <button class="theme-toggle" type="button" aria-label="Toggle dark mode"><span class="icon-sun"><i class="fa-solid fa-sun"></i></span><span class="icon-moon"><i class="fa-solid fa-moon"></i></span></button>
+          <button class="rtl-toggle" type="button" data-rtl-toggle aria-label="Toggle text direction"><span data-rtl-label>RTL</span></button>
+          <a class="btn btn-ghost" href="dashboard.html"><i class="fa-solid fa-gauge-high"></i> Dashboard</a>
+        </div>
+      </header>
+
+      <div class="container px-0">
+        <section class="row g-4 mb-4">
+          <div class="col-lg-7">
+            <div class="card-neu p-4 h-100">
+              <h2 class="h5 mb-1">Profile</h2>
+              <p class="text-muted small mb-3">This is how we address you and how you reach support.</p>
+              <form id="acctForm" novalidate>
+                <div class="alert d-none" id="acctMsg" role="alert"></div>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label class="form-label" for="acctFname">First name</label>
+                    <input class="field" id="acctFname" type="text" placeholder="e.g. Emma" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="acctLname">Last name</label>
+                    <input class="field" id="acctLname" type="text" placeholder="e.g. Lewis" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="acctPhone">Phone</label>
+                    <input class="field" id="acctPhone" type="tel" placeholder="e.g. +1 555 0100">
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="acctEmail">Email</label>
+                    <input class="field" id="acctEmail" type="email" placeholder="e.g. emma@example.com" required>
+                  </div>
+                  <div class="col-12 d-flex justify-content-end">
+                    <button class="btn btn-accent" type="submit"><i class="fa-solid fa-floppy-disk"></i> Save changes</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div class="col-lg-5">
+            <div class="card-neu p-4 h-100">
+              <h2 class="h5 mb-2">Your activity</h2>
+              <p class="text-muted small mb-1">Totals across all your repairs with Voltix.</p>
+              <div id="acctStats"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="row g-4 mb-4">
+          <div class="col-lg-7">
+            <div class="card-neu p-4 h-100">
+              <h2 class="h5 mb-1">Security</h2>
+              <p class="text-muted small mb-3">Use at least 8 characters with a mix of letters, numbers and symbols.</p>
+              <form id="pwForm" novalidate>
+                <div class="alert d-none" id="pwMsg" role="alert"></div>
+                <div class="row g-3">
+                  <div class="col-md-4">
+                    <label class="form-label" for="pwCurrent">Current password</label>
+                    <div class="field-wrap">
+                      <i class="field-icon fa-solid fa-lock"></i>
+                      <input class="field" id="pwCurrent" type="password" placeholder="••••••••" autocomplete="current-password" required>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <label class="form-label" for="pwNew">New password</label>
+                    <div class="field-wrap">
+                      <i class="field-icon fa-solid fa-key"></i>
+                      <input class="field" id="pwNew" type="password" placeholder="Min. 8 characters" autocomplete="new-password" required>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <label class="form-label" for="pwConfirm">Confirm new password</label>
+                    <div class="field-wrap">
+                      <i class="field-icon fa-solid fa-shield-halved"></i>
+                      <input class="field" id="pwConfirm" type="password" placeholder="Repeat new password" autocomplete="new-password" required>
+                    </div>
+                  </div>
+                  <div class="col-12 d-flex justify-content-end">
+                    <button class="btn btn-ghost" type="submit"><i class="fa-solid fa-key"></i> Update password</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div class="col-lg-5">
+            <div class="card-neu p-4 h-100">
+              <h2 class="h5 mb-2">Notifications</h2>
+              <p class="text-muted small mb-1">Choose how we keep you updated.</p>
+              <div class="pref-row">
+                <div class="pref-txt"><b>Status updates</b><small>Repair progress emails &amp; SMS</small></div>
+                <button class="switch" type="button" data-pref="notifyStatus" aria-label="Toggle status updates" aria-pressed="false"></button>
+              </div>
+              <div class="pref-row">
+                <div class="pref-txt"><b>Ready for pickup</b><small>Alert the moment your device is ready</small></div>
+                <button class="switch" type="button" data-pref="notifyReady" aria-label="Toggle ready for pickup alerts" aria-pressed="false"></button>
+              </div>
+              <div class="pref-row">
+                <div class="pref-txt"><b>Promo &amp; offers</b><small>Seasonal discounts and service offers</small></div>
+                <button class="switch" type="button" data-pref="notifyPromo" aria-label="Toggle promo and offers" aria-pressed="false"></button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="mb-2">
+          <div class="card-neu p-4 d-flex flex-column flex-sm-row align-items-sm-center gap-3">
+            <span class="icon-box" style="color:var(--teal)"><i class="fa-solid fa-headset"></i></span>
+            <div class="flex-grow-1">
+              <h3 class="h6 mb-1">Need a hand?</h3>
+              <p class="text-muted small mb-0">Questions about a repair, warranty or billing? Our support team replies within one business day.</p>
+            </div>
+            <a class="btn btn-ghost" href="contact.html"><i class="fa-solid fa-arrow-right"></i> Contact support</a>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <button id="backTop" class="back-top" type="button" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/dashboard-nav.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

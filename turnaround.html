@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Repair turnaround times at Voltix Repair Lab — most screen and battery repairs done the same day, board-level repairs in 1-3 days.">
+  <title>Turnaround Times — Voltix Repair Lab</title>
+  <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <script>
+    (function () {
+      var root = document.documentElement;
+      try {
+        var theme = localStorage.getItem('theme');
+        if (!theme) theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        root.setAttribute('data-theme', theme);
+        var dir = localStorage.getItem('dir');
+        if (dir === 'rtl' || dir === 'ltr') root.setAttribute('dir', dir);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body data-page="turnaround">
+
+  <div id="preloader" aria-hidden="true">
+    <svg class="preloader-bolt" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="#a0113d">
+      <path d="M13 2 4.5 13.5H11L9.5 22 19 9.5h-6.5L13 2Z"/>
+    </svg>
+  </div>
+
+  <div id="navbar"></div>
+
+  <main>
+    <!-- ============ PAGE HEADER ============ -->
+    <section class="page-header">
+      <div class="container">
+        <h1>Repair Turnaround</h1>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Turnaround</li>
+          </ol>
+        </nav>
+      </div>
+    </section>
+
+    <!-- ============ TIMELINE ============ -->
+    <section class="section">
+      <div class="container">
+        <div class="row g-5">
+          <div class="col-lg-6 reveal">
+            <span class="sec-eyebrow"><i class="fa-solid fa-clock"></i> What happens</span>
+            <h2 class="mb-4">From drop-off to pickup</h2>
+            <ul class="list-unstyled repair-timeline mb-0">
+              <li class="tl-item done">
+                <h6>Drop-off / pickup</h6>
+                <small class="text-muted">Bring it in, or book free pickup. We log and photograph your device.</small>
+              </li>
+              <li class="tl-item done">
+                <h6>Free diagnosis</h6>
+                <small class="text-muted">Within 2 working hours, you get a firm quote by SMS and email.</small>
+              </li>
+              <li class="tl-item done">
+                <h6>Repair</h6>
+                <small class="text-muted">You approve the quote, then your certified tech gets to work.</small>
+              </li>
+              <li class="tl-item done">
+                <h6>Quality check</h6>
+                <small class="text-muted">A 30-point test covers screen, battery, ports, cameras, sensors and stress.</small>
+              </li>
+              <li class="tl-item">
+                <h6>Ready to collect</h6>
+                <small class="text-muted">We text you the moment it's ready. Free delivery on express orders.</small>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-6 reveal reveal-delay-2">
+            <div class="hero-visual">
+              <div class="neu">
+                <img src="assets/img/turnaround-1.webp" alt="Repair turnaround illustration">
+              </div>
+              <div class="hero-float f1">
+                <span class="f-ico"><i class="fa-solid fa-bolt"></i></span>
+                <div><b>60 min</b><small>Most screen repairs</small></div>
+              </div>
+              <div class="hero-float f2">
+                <span class="f-ico"><i class="fa-solid fa-clock"></i></span>
+                <div><b>3 days max</b><small>Board-level work</small></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TABLE ============ -->
+    <section class="section bg-soft">
+      <div class="container">
+        <div class="sec-head reveal">
+          <span class="sec-eyebrow"><i class="fa-solid fa-list-check"></i> Estimated times</span>
+          <h2>How long will my repair take?</h2>
+          <p>Standard turnaround below. Express service is available at checkout for same-day results.</p>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-10 reveal">
+            <div class="rate-table">
+              <table class="table table-gh mb-0">
+                <thead>
+                  <tr><th>Repair type</th><th>Standard</th><th>Express (+$20)</th><th>Notes</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Battery replacement</td><td>Same day</td><td>45 minutes</td><td>Most phones &amp; laptops</td></tr>
+                  <tr><td>Screen replacement</td><td>Same day</td><td>Under 1 hour</td><td>Parts in stock</td></tr>
+                  <tr><td>Charging port</td><td>Same day</td><td>2 hours</td><td>OEM port assemblies</td></tr>
+                  <tr><td>Camera repair</td><td>Same day</td><td>2 hours</td><td>Front &amp; rear modules</td></tr>
+                  <tr><td>Software / virus removal</td><td>Same day</td><td>4 hours</td><td>Backup advised</td></tr>
+                  <tr><td>Water damage treatment</td><td>1 – 2 days</td><td>Same day</td><td>Ultrasonic bath + board work</td></tr>
+                  <tr><td>Motherboard / board-level</td><td>1 – 3 days</td><td>24 hours</td><td>Micro-soldering bench</td></tr>
+                  <tr><td>Data recovery</td><td>1 – 5 days</td><td>48 hours</td><td>Clean-room cases quoted</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TRACKING CTA ============ -->
+    <section class="section">
+      <div class="container">
+        <div class="card-neu neu-lg p-4 p-lg-5 text-center circuit-bg reveal">
+          <h2 class="mb-2">Track your repair live</h2>
+          <p class="text-muted mb-4 mx-auto" style="max-width:540px">Every repair gets a tracking ID. Follow each stage from received to ready in your customer dashboard.</p>
+          <div class="d-flex flex-wrap justify-content-center gap-3">
+            <a class="btn btn-accent btn-lg" href="dashboard.html"><i class="fa-solid fa-microchip"></i> Track a Repair</a>
+            <a class="btn btn-ghost btn-lg" href="home-2.html#booking"><i class="fa-solid fa-wrench"></i> Book a Repair</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer"></div>
+
+  <button id="backTop" class="back-top" type="button" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Voltix Repair Lab — get an instant estimate, book a repair and track progress. Same-day electronics repair for phones, laptops, consoles and more.">
+  <title>Home 2 — Voltix Repair Lab</title>
+  <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <script>
+    (function () {
+      var root = document.documentElement;
+      try {
+        var theme = localStorage.getItem('theme');
+        if (!theme) theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        root.setAttribute('data-theme', theme);
+        var dir = localStorage.getItem('dir');
+        if (dir === 'rtl' || dir === 'ltr') root.setAttribute('dir', dir);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body data-page="home">
+
+  <div id="preloader" aria-hidden="true">
+    <svg class="preloader-bolt" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="#a0113d">
+      <path d="M13 2 4.5 13.5H11L9.5 22 19 9.5h-6.5L13 2Z"/>
+    </svg>
+  </div>
+
+  <div id="navbar"></div>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="hero circuit-bg hero-short">
+      <div class="ambient-bg" aria-hidden="true">
+        <span class="orb o1"></span><span class="orb o2"></span>
+        <span class="orb o3"></span><span class="orb o4"></span>
+        <span class="orb o5"></span>
+        <span class="bokeh b1"></span><span class="bokeh b2"></span><span class="bokeh b3"></span>
+      </div>
+      <div class="container">
+        <div class="hero-inner">
+          <div class="hero-copy reveal in">
+            <span class="hero-eyebrow"><i class="fa-solid fa-screwdriver-wrench"></i> Local repair lab · Same-day service</span>
+            <h1>Instant estimate. <span class="grad">Honest repair.</span></h1>
+            <p class="hero-lead">Pick your device and issue, get a ballpark price in seconds, then book a free diagnosis. You only pay when the job is approved.</p>
+            <div class="hero-cta">
+              <a class="btn btn-accent btn-lg" href="#quote"><i class="fa-solid fa-calculator"></i> Get an Estimate</a>
+              <a class="btn btn-ghost btn-lg" href="#booking"><i class="fa-solid fa-wrench"></i> Book a Repair</a>
+            </div>
+            <div class="hero-stats">
+              <div class="hero-stat"><div><b>60 min</b><span>Average screen repair</span></div></div>
+              <div class="hero-stat"><div><b>90 days</b><span>Written warranty</span></div></div>
+              <div class="hero-stat"><div><b>$0</b><span>Diagnosis fee</span></div></div>
+            </div>
+          </div>
+          <div class="hero-visual reveal in reveal-delay-2">
+            <div class="neu">
+              <img src="assets/img/home-2.webp" alt="Technician repairing a laptop illustration">
+            </div>
+            <div class="hero-float f1">
+              <span class="f-ico"><i class="fa-solid fa-map-pin"></i></span>
+              <div><b>6 labs near you</b><small>Open 7 days a week</small></div>
+            </div>
+            <div class="hero-float f2">
+              <span class="f-ico"><i class="fa-solid fa-truck-fast"></i></span>
+              <div><b>Free pickup</b><small>Home or office</small></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ QUICK QUOTE ============ -->
+    <section class="section" id="quote">
+      <div class="container">
+        <div class="card-neu neu-lg p-4 p-lg-5">
+          <div class="row g-4 align-items-center">
+            <div class="col-lg-5">
+              <span class="sec-eyebrow"><i class="fa-solid fa-calculator"></i> Quick quote</span>
+              <h2 class="mb-3">Estimate your repair in seconds</h2>
+              <p class="text-muted mb-0">This is a guide price only. Your exact quote is confirmed after a free 15-minute diagnosis — and it never changes without your approval.</p>
+            </div>
+            <div class="col-lg-7">
+              <form id="quoteForm" novalidate>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label class="form-label" for="quoteDevice">Device type</label>
+                    <div class="field-wrap">
+                      <i class="field-icon fa-solid fa-mobile-screen-button"></i>
+                      <select class="field" id="quoteDevice">
+                        <option value="phone">Smartphone</option>
+                        <option value="laptop">Laptop / MacBook</option>
+                        <option value="tablet">Tablet</option>
+                        <option value="tv">TV / Monitor</option>
+                        <option value="gaming">Console / Handheld</option>
+                        <option value="audio">Headphones / Audio</option>
+                        <option value="watch">Smartwatch</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="quoteIssue">What's wrong?</label>
+                    <div class="field-wrap">
+                      <i class="field-icon fa-solid fa-wrench"></i>
+                      <select class="field" id="quoteIssue">
+                        <option value="screen">Broken screen</option>
+                        <option value="battery">Battery problem</option>
+                        <option value="charging">Not charging</option>
+                        <option value="camera">Camera issue</option>
+                        <option value="motherboard">Won't turn on</option>
+                        <option value="speaker">Sound / speaker</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div id="quoteOutput" class="d-none mt-4">
+                  <div class="neu-inset rounded p-3 p-md-4 d-flex flex-wrap align-items-center justify-content-between gap-3">
+                    <div>
+                      <small class="text-muted fw-bold d-block">Estimated repair cost</small>
+                      <div class="grad-text" style="font-family:var(--font-head);font-size:2rem;font-weight:800">$<span id="quoteValue">0</span></div>
+                    </div>
+                    <div class="text-muted small flex-grow-1" style="max-width:320px" id="quoteNote"></div>
+                    <a class="btn btn-accent" href="#booking"><i class="fa-solid fa-wrench"></i> Book This Repair</a>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ DEVICES WE SUPPORT ============ -->
+    <section class="section bg-soft">
+      <div class="container">
+        <div class="sec-head reveal">
+          <span class="sec-eyebrow"><i class="fa-solid fa-microchip"></i> What we fix</span>
+          <h2>Devices we repair every day</h2>
+          <p>Phones, laptops, tablets, consoles, wearables and home electronics — all under one roof.</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-6 col-md-4 col-lg-3 reveal">
+            <div class="card-neu device-card">
+              <div class="icon-box"><i class="fa-solid fa-mobile-screen"></i></div>
+              <h3>Smartphones</h3><small>iPhone · Android</small>
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 reveal reveal-delay-1">
+            <div class="card-neu device-card">
+              <div class="icon-box"><i class="fa-solid fa-laptop"></i></div>
+              <h3>Laptops</h3><small>Windows · Mac · Chrome</small>
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 reveal reveal-delay-2">
+            <div class="card-neu device-card">
+              <div class="icon-box"><i class="fa-solid fa-tablet-screen-button"></i></div>
+              <h3>Tablets</h3><small>iPad · Galaxy Tab</small>
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 reveal reveal-delay-3">
+            <div class="card-neu device-card">
+              <div class="icon-box"><i class="fa-solid fa-gamepad"></i></div>
+              <h3>Consoles</h3><small>PS5 · Xbox · Switch</small>
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 reveal">
+            <div class="card-neu device-card">
+              <div class="icon-box"><i class="fa-solid fa-tv"></i></div>
+              <h3>TVs &amp; Monitors</h3><small>LED · OLED · Curved</small>
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 reveal reveal-delay-1">
+            <div class="card-neu device-card">
+              <div class="icon-box"><i class="fa-solid fa-headphones"></i></div>
+              <h3>Audio</h3><small>AirPods · Headphones</small>
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 reveal reveal-delay-2">
+            <div class="card-neu device-card">
+              <div class="icon-box"><i class="fa-solid fa-clock"></i></div>
+              <h3>Wearables</h3><small>Apple Watch · Fitbit</small>
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-3 reveal reveal-delay-3">
+            <div class="card-neu device-card">
+              <div class="icon-box"><i class="fa-solid fa-house-chimney"></i></div>
+              <h3>Home Electronics</h3><small>Cameras · Appliances</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ REPAIR STEPS ============ -->
+    <section class="section">
+      <div class="container">
+        <div class="sec-head reveal">
+          <span class="sec-eyebrow"><i class="fa-solid fa-route"></i> How it works</span>
+          <h2>Your repair, tracked from bench to pickup</h2>
+          <p>Every job gets a tracking ID so you always know exactly where your device is.</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3 reveal">
+            <div class="card-neu step-card">
+              <div class="step-num">01</div>
+              <h3>Book online</h3>
+              <p>Choose a lab, pick a timeslot and tell us the issue. Takes under a minute.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 reveal reveal-delay-1">
+            <div class="card-neu step-card">
+              <div class="step-num">02</div>
+              <h3>Free diagnosis</h3>
+              <p>We inspect your device and share a firm quote with a live time estimate.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 reveal reveal-delay-2">
+            <div class="card-neu step-card">
+              <div class="step-num">03</div>
+              <h3>Track progress</h3>
+              <p>Follow each stage in your dashboard — received, diagnosis, repair, QA, ready.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 reveal reveal-delay-3">
+            <div class="card-neu step-card">
+              <div class="step-num">04</div>
+              <h3>Pick up &amp; enjoy</h3>
+              <p>Collect in store or get free delivery. 90-day warranty included.</p>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-5 reveal">
+          <a class="btn btn-accent btn-lg" href="dashboard.html"><i class="fa-solid fa-microchip"></i> Try the live tracking demo</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ BOOKING ============ -->
+    <section class="section bg-soft" id="booking">
+      <div class="container">
+        <div class="row g-5 align-items-start">
+          <div class="col-lg-5 reveal">
+            <span class="sec-eyebrow"><i class="fa-solid fa-calendar-check"></i> Book a repair</span>
+            <h2 class="mb-3">Book your free diagnosis</h2>
+            <p class="text-muted mb-4">Pick a lab, a day and a time. Our team confirms by SMS and email — and you can reschedule anytime.</p>
+            <ul class="list-unstyled d-grid gap-3">
+              <li class="info-card card-neu"><span class="icon-box"><i class="fa-solid fa-truck-fast"></i></span><div><h3>Free pickup &amp; delivery</h3><p>Within the metro area, on most repairs over $50.</p></div></li>
+              <li class="info-card card-neu"><span class="icon-box"><i class="fa-solid fa-clock"></i></span><div><h3>Walk-ins welcome</h3><p>No booking needed — most walk-ins are done same-day.</p></div></li>
+              <li class="info-card card-neu"><span class="icon-box"><i class="fa-solid fa-shield-halved"></i></span><div><h3>90-day warranty</h3><p>On every repair, parts and labour, in writing.</p></div></li>
+            </ul>
+          </div>
+          <div class="col-lg-7 reveal reveal-delay-2">
+            <div class="card-neu neu-lg p-4 p-lg-5">
+              <form id="bookingForm" novalidate>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label class="form-label" for="bk-name">Full name</label>
+                    <input class="field" id="bk-name" type="text" placeholder="e.g. Alex Morgan" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="bk-phone">Phone</label>
+                    <input class="field" id="bk-phone" type="tel" placeholder="(555) 000-0000" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="bk-email">Email</label>
+                    <input class="field" id="bk-email" type="email" placeholder="you@email.com" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="bk-device">Device</label>
+                    <div class="field-wrap">
+                      <i class="field-icon fa-solid fa-mobile-screen-button"></i>
+                      <select class="field" id="bk-device" required>
+                        <option value="" disabled selected>Select device…</option>
+                        <option>Smartphone</option>
+                        <option>Laptop</option>
+                        <option>Tablet</option>
+                        <option>Console</option>
+                        <option>TV / Monitor</option>
+                        <option>Audio</option>
+                        <option>Wearable</option>
+                        <option>Other</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="bk-date">Preferred date</label>
+                    <input class="field" id="bk-date" type="date" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="bk-time">Preferred time</label>
+                    <div class="field-wrap">
+                      <i class="field-icon fa-solid fa-clock"></i>
+                      <select class="field" id="bk-time" required>
+                        <option value="" disabled selected>Select a time…</option>
+                        <option>09:00 – 11:00</option>
+                        <option>11:00 – 13:00</option>
+                        <option>13:00 – 15:00</option>
+                        <option>15:00 – 17:00</option>
+                        <option>17:00 – 19:00</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <label class="form-label" for="bk-issue">What's wrong?</label>
+                    <textarea class="field" id="bk-issue" rows="3" placeholder="Briefly describe the problem…" required></textarea>
+                  </div>
+                  <div class="col-12">
+                    <button class="btn btn-accent btn-lg btn-block" type="submit"><i class="fa-solid fa-paper-plane"></i> Confirm booking</button>
+                  </div>
+                </div>
+              </form>
+              <div id="bookingDone" class="d-none text-center py-4">
+                <div class="icon-box mx-auto mb-3" style="color:#fff;background:linear-gradient(135deg,var(--accent),var(--accent-2))"><i class="fa-solid fa-check"></i></div>
+                <h3 class="mb-2">Booking received!</h3>
+                <p class="text-muted mb-0">Thanks! Our team will confirm your appointment by SMS and email shortly.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TESTIMONIALS ============ -->
+    <section class="section">
+      <div class="container">
+        <div class="sec-head reveal">
+          <span class="sec-eyebrow"><i class="fa-solid fa-comment"></i> Reviews</span>
+          <h2>What locals say about Voltix</h2>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4 reveal">
+            <div class="card-neu t-card">
+              <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+              <blockquote>"Estimated my repair online, got a same price in-store, and they had it done in 40 minutes. Effortless."</blockquote>
+              <div class="t-user">
+                <img src="assets/img/reviews/omar-farouk.jpg" alt="Omar Farouk">
+                <div><b>Omar Farouk</b><small>Pixel 8 · Battery</small></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 reveal reveal-delay-1">
+            <div class="card-neu t-card">
+              <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+              <blockquote>"The tracking dashboard is genius. I watched my laptop move from diagnosis to QA without calling anyone."</blockquote>
+              <div class="t-user">
+                <img src="assets/img/reviews/grace-liu.jpg" alt="Grace Liu">
+                <div><b>Grace Liu</b><small>Dell XPS · SSD upgrade</small></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 reveal reveal-delay-2">
+            <div class="card-neu t-card">
+              <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+              <blockquote>"Sent my console for repair via free pickup and got it back in two days with a warranty. Perfect."</blockquote>
+              <div class="t-user">
+                <img src="assets/img/reviews/david-stone.jpg" alt="David Stone">
+                <div><b>David Stone</b><small>PS5 · HDMI port</small></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="section-sm">
+      <div class="container">
+        <div class="glass-band reveal">
+          <div class="gb-inner">
+            <h2>Track a repair or request one now</h2>
+            <p>Sign in to your dashboard to follow live progress, download invoices and request new repairs.</p>
+            <div class="gb-actions">
+              <a class="btn btn-accent btn-lg" href="dashboard.html"><i class="fa-solid fa-microchip"></i> My Dashboard</a>
+              <a class="btn btn-ghost btn-lg" href="register.html"><i class="fa-solid fa-user-plus"></i> Create Account</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer"></div>
+
+  <button id="backTop" class="back-top" type="button" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

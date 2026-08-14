@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Voltix Repair Lab — same-day electronics repair for smartphones, laptops, tablets, consoles, TVs and more. Free diagnosis, genuine parts, 90-day warranty.">
+  <title>Voltix Repair Lab — Electronics Repair Shop Template</title>
+  <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <script>
+    (function () {
+      var root = document.documentElement;
+      try {
+        var theme = localStorage.getItem('theme');
+        if (!theme) theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        root.setAttribute('data-theme', theme);
+        var dir = localStorage.getItem('dir');
+        if (dir === 'rtl' || dir === 'ltr') root.setAttribute('dir', dir);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body data-page="home">
+
+  <div id="preloader" aria-hidden="true">
+    <svg class="preloader-bolt" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="#a0113d">
+      <path d="M13 2 4.5 13.5H11L9.5 22 19 9.5h-6.5L13 2Z"/>
+    </svg>
+  </div>
+
+  <div id="navbar"></div>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="hero circuit-bg hero-mod">
+      <div class="ambient-bg" aria-hidden="true">
+        <span class="orb o1"></span><span class="orb o2"></span>
+        <span class="orb o3"></span><span class="orb o4"></span>
+      </div>
+      <div class="container">
+        <div class="hero-inner">
+          <div class="hero-copy reveal in">
+            <span class="hero-eyebrow"><i class="fa-solid fa-bolt"></i> Same-day repair · 90-day warranty</span>
+            <h1>Broken device? <span class="grad">We power it back on.</span></h1>
+            <p class="hero-lead">From cracked screens to water damage, Voltix brings smartphones, laptops, consoles and home electronics back to life — usually the same day, always with genuine parts.</p>
+            <div class="hero-cta">
+              <a class="btn btn-accent btn-lg" href="home-2.html#booking"><i class="fa-solid fa-wrench"></i> Book a Repair</a>
+              <a class="btn btn-ghost btn-lg" href="service-details.html"><i class="fa-solid fa-play"></i> See How It Works</a>
+            </div>
+            <div class="hero-badges">
+              <span><i class="fa-solid fa-circle-check"></i> Free 15-min diagnosis</span>
+              <span><i class="fa-solid fa-circle-check"></i> Genuine parts</span>
+              <span><i class="fa-solid fa-circle-check"></i> 90-day warranty</span>
+            </div>
+            <div class="hero-stats">
+              <div class="hero-stat">
+                <div>
+                  <b data-count="28000" data-suffix="+">0</b>
+                  <span>Devices repaired</span>
+                </div>
+              </div>
+              <div class="hero-stat">
+                <div>
+                  <b data-count="14" data-suffix="">0</b>
+                  <span>Years in business</span>
+                </div>
+              </div>
+              <div class="hero-stat">
+                <div>
+                  <b data-count="98" data-suffix="%">0</b>
+                  <span>Success rate</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="hero-media reveal in reveal-delay-2">
+            <div class="hm-ring"></div>
+            <div class="hm-frame">
+              <img src="assets/img/hero1.jpg" alt="Smartphone, laptop and tablet repair at the Voltix bench">
+            </div>
+            <div class="hm-chip c1">
+              <span class="f-ico"><i class="fa-solid fa-shield-halved"></i></span>
+              <div><b>90-day warranty</b><small>On parts &amp; labour</small></div>
+            </div>
+            <div class="hm-chip c2">
+              <span class="f-ico"><i class="fa-solid fa-stopwatch"></i></span>
+              <div><b>Under 60 min</b><small>Most screen repairs</small></div>
+            </div>
+            <div class="hm-avatars">
+              <img class="av" src="assets/img/reviews/emma-lewis.jpg" alt="">
+              <img class="av" src="assets/img/reviews/marcus-lee.jpg" alt="">
+              <img class="av" src="assets/img/reviews/hannah-park.jpg" alt="">
+              <small>4.9 · 1,200+ reviews</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ BRANDS STRIP ============ -->
+    <section class="section-sm">
+      <div class="container">
+        <p class="text-center text-muted fw-bold small text-uppercase mb-4" style="letter-spacing:2px">Certified techs for every major brand</p>
+        <div class="row g-3 justify-content-center text-center">
+          <div class="col-6 col-md-3 col-lg">
+            <div class="brand-chip neu"><div class="b-logo"><i class="fa-brands fa-apple"></i></div><h3>Apple</h3><small>iPhone · MacBook · iPad</small></div>
+          </div>
+          <div class="col-6 col-md-3 col-lg">
+            <div class="brand-chip neu"><div class="b-logo"><i class="fa-brands fa-android"></i></div><h3>Samsung</h3><small>Galaxy · Tab · Watch</small></div>
+          </div>
+          <div class="col-6 col-md-3 col-lg">
+            <div class="brand-chip neu"><div class="b-logo"><i class="fa-brands fa-google"></i></div><h3>Google</h3><small>Pixel · Nest · Home</small></div>
+          </div>
+          <div class="col-6 col-md-3 col-lg">
+            <div class="brand-chip neu"><div class="b-logo"><i class="fa-brands fa-microsoft"></i></div><h3>Microsoft</h3><small>Surface · Xbox</small></div>
+          </div>
+          <div class="col-6 col-md-3 col-lg">
+            <div class="brand-chip neu"><div class="b-logo"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M8.5505 9.8881c.921 0 1.6574.2303 2.2209.7423.3848.3485.5999.8454.5939 1.3665a1.9081 1.9081 0 0 1-.5939 1.3726c-.5272.4848-1.3483.7423-2.221.7423-.8725 0-1.6785-.2575-2.2148-.7423-.3908-.3485-.609-.8484-.603-1.3726 0-.518.2182-1.015.603-1.3665.5-.4545 1.3847-.7423 2.2149-.7423zm.003 3.6692c.4606 0 .8878-.1606 1.1878-.4575.2999-.2999.4332-.6605.4332-1.1029 0-.4242-.1484-.821-.4333-1.1029-.2938-.2908-.7332-.4545-1.1877-.4545s-.8938.1637-1.1907.4545c-.2848.2818-.4333.6787-.4333 1.103-.006.409.1485.806.4333 1.1029.2969.2939.7332.4575 1.1907.4575zm-4.8418-1.9665c.1605.0424.315.094.4666.1636a1.352 1.352 0 0 1 .3787.2576c.197.206.309.4817.306.7665a.9643.9643 0 0 1-.3787.7788 2.0662 2.0662 0 0 1-.709.3485 3.7231 3.7231 0 0 1-1.1938.1697c-.352 0-.5467-.0406-.8138-.0962l-.077-.016c-.294-.0666-.5817-.1575-.8575-.2787a.0695.0695 0 0 0-.0424-.0121c-.0454 0-.0818.0394-.0818.0848v.203H.1212v-1.4786h.5242a.7559.7559 0 0 0 .1363.418c.2121.2607.4394.3607.6575.4395.3666.1212.7514.1848 1.1362.1969.5526 0 .8756-.134.9455-.163l.009-.0037.0062-.0023c.0616-.0226.3119-.1143.3119-.3916 0-.2743-.2338-.334-.387-.373l-.022-.0058c-.1708-.046-.562-.0872-.9897-.1323l-.1526-.016c-.4848-.0515-.9696-.1273-1.1968-.1758-.4977-.1097-.6942-.2917-.816-.4045l-.0082-.0076A1.0192 1.0192 0 0 1 0 11.1608c0-.497.3394-.797.7575-.9817.4454-.2.9756-.288 1.4392-.288.8211.0031 1.4877.2697 1.727.394.097.0515.1455-.0121.1455-.0606v-.1484h.5272v1.2876h-.4727a.9056.9056 0 0 0-.2939-.4909 1.289 1.289 0 0 0-.297-.1787c-.3968-.1667-.821-.2515-1.2513-.2455-.4423 0-.8665.085-1.0786.2153-.1333.0818-.2.1848-.2.306 0 .1727.1454.2424.2182.2636.1967.0597.6328.103.972.1369.0736.0073.1426.0142.2036.0206.3272.0334 1.012.1243 1.315.2zm18.1673-.9966v-.4787H24v.4696h-.4757c-.1727 0-.2424.0334-.3727.1788l-1.4271 1.63a.098.098 0 0 0-.0182.0698v.7423a1.106 1.106 0 0 0 .0121.103.1496.1496 0 0 0 .1.0909.9368.9368 0 0 0 .1303.009h.4848v.4698h-2.5724v-.4697h.4606a.9343.9343 0 0 0 .1302-.0091.1627.1627 0 0 0 .1031-.091.5626.5626 0 0 0 .009-.1v-.7422c0-.0242 0-.0242-.0333-.0636a606.7592 606.7592 0 0 0-1.4119-1.6028c-.0758-.0788-.2061-.2061-.406-.2061h-.4576v-.4696h2.5876v.4696h-.3121c-.0697 0-.1182.0697-.0576.1455 0 0 .8696 1.0392.8787 1.0513.0091.0122.0152.0122.0273.003.0121-.009.8938-1.0453.8999-1.0543a.0912.0912 0 0 0-.0182-.1273.1095.1095 0 0 0-.0606-.0182zm-6.284-.0031h.4848c.2212 0 .2606.0848.2636.2909l.0273 1.5664-2.5815-2.324H11.944v.4697h.412c.297 0 .3182.1636.3182.309v2.2138c.0004.1285.0009.295-.1818.295h-.506v.4667h2.1634v-.4697h-.5273c-.212 0-.2211-.097-.2242-.303v-1.8816l2.9724 2.6511h.7575l-.0394-2.9966c.003-.218.0182-.2908.2424-.2908h.4726v-.4697H15.595Z"/></svg></div><h3>Sony</h3><small>PlayStation · Headphones</small></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SERVICES ============ -->
+    <section class="section bg-soft">
+      <div class="container">
+        <div class="sec-head reveal">
+          <span class="sec-eyebrow"><i class="fa-solid fa-microchip"></i> What we fix</span>
+          <h2>Repair services that cover every device</h2>
+          <p>Certified technicians, genuine parts and upfront pricing — no surprises, ever.</p>
+        </div>
+        <div class="bento">
+          <div class="bento-item wide reveal">
+            <div class="b-media"><img src="assets/img/srv-screen.jpg" alt="Screen replacement on a smartphone"></div>
+            <span class="b-num">01</span>
+            <div class="b-body">
+              <div class="b-ico"><i class="fa-solid fa-mobile-screen"></i></div>
+              <h3>Screen Replacement</h3>
+              <p>Cracked glass, dead pixels or unresponsive touch — original and aftermarket OLED/LCD displays fitted in under an hour.</p>
+              <a class="b-link" href="service-details.html?service=screen-replacement">View service <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+          <div class="bento-item reveal reveal-delay-1">
+            <div class="b-media"><img src="assets/img/srv-battery.jpg" alt="Battery replacement"></div>
+            <span class="b-num">02</span>
+            <div class="b-body">
+              <div class="b-ico"><i class="fa-solid fa-battery-half"></i></div>
+              <h3>Battery Replacement</h3>
+              <p>Draining or swelling battery? We fit high-capacity cells and calibrate health for like-new endurance.</p>
+              <a class="b-link" href="service-details.html?service=battery-replacement">View service <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+          <div class="bento-item reveal">
+            <div class="b-media"><img src="assets/img/srv-port.jpg" alt="Charging port repair"></div>
+            <span class="b-num">03</span>
+            <div class="b-body">
+              <div class="b-ico"><i class="fa-solid fa-plug-circle-bolt"></i></div>
+              <h3>Charging Port Repair</h3>
+              <p>Loose, burnt or dead ports replaced with OEM assemblies, plus fast-charging fixes.</p>
+              <a class="b-link" href="service-details.html?service=charging-port">View service <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+          <div class="bento-item wide reveal reveal-delay-1">
+            <div class="b-media"><img src="assets/img/srv-board.jpg" alt="Micro-soldering on a logic board"></div>
+            <span class="b-num">04</span>
+            <div class="b-body">
+              <div class="b-ico"><i class="fa-solid fa-microchip"></i></div>
+              <h3>Motherboard Repair</h3>
+              <p>Micro-soldering on logic boards for power, audio, network and boot failures — even data recovery from dead boards.</p>
+              <a class="b-link" href="service-details.html?service=motherboard-repair">View service <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-5 reveal">
+          <a class="btn btn-accent btn-lg" href="services.html">Browse all services <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WHY CHOOSE US ============ -->
+    <section class="section">
+      <div class="container">
+        <div class="feat-row">
+          <div class="feat-copy reveal">
+            <span class="sec-eyebrow"><i class="fa-solid fa-star"></i> Why Voltix</span>
+            <h2>A repair shop you can actually trust</h2>
+            <p class="lead">No hidden fees, no mystery parts, no disappearing techs. Every repair is tracked end-to-end and backed by a written warranty.</p>
+            <ul class="feat-list">
+              <li><i class="fa-solid fa-check"></i><div><b>Upfront pricing</b><p>Get a firm quote before we touch a screwdriver. If we find more, we call you first.</p></div></li>
+              <li><i class="fa-solid fa-check"></i><div><b>Certified techs</b><p>Factory-trained, background-checked technicians with 2,000+ successful repairs each.</p></div></li>
+              <li><i class="fa-solid fa-check"></i><div><b>90-day warranty</b><p>Parts and labour covered in writing. If it fails, we fix it free — no questions.</p></div></li>
+              <li><i class="fa-solid fa-check"></i><div><b>Your data, safe</b><p>Certified data wipe after diagnosis, or keep a free backup before any repair.</p></div></li>
+            </ul>
+            <a class="btn btn-accent" href="about.html">More about Voltix <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+          <div class="feat-media reveal reveal-delay-2">
+            <div class="fm-blob"></div>
+            <div class="fm-frame">
+              <img src="assets/img/about-home.jpg" alt="Voltix technician bench with devices">
+            </div>
+            <div class="fm-chip">
+              <span class="f-ico"><i class="fa-solid fa-star"></i></span>
+              <div><b>4.9 / 5 rating</b><small>1,200+ Google reviews</small></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROCESS ============ -->
+    <section class="section bg-soft">
+      <div class="container">
+        <div class="sec-head reveal">
+          <span class="sec-eyebrow"><i class="fa-solid fa-route"></i> How it works</span>
+          <h2>From broken to back in four steps</h2>
+          <p>Book online, track live, pick up. Most repairs are ready the same day.</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3 reveal">
+            <div class="card-neu step-card">
+              <div class="step-num">01</div>
+              <h3>Book or drop off</h3>
+              <p>Request a repair online or visit any lab. We run a free 15-minute diagnosis.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 reveal reveal-delay-1">
+            <div class="card-neu step-card">
+              <div class="step-num">02</div>
+              <h3>Get a firm quote</h3>
+              <p>You approve the price and timeframe before any work starts. No surprises.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 reveal reveal-delay-2">
+            <div class="card-neu step-card">
+              <div class="step-num">03</div>
+              <h3>We repair &amp; test</h3>
+              <p>Certified techs repair your device and run a 30-point quality check.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 reveal reveal-delay-3">
+            <div class="card-neu step-card">
+              <div class="step-num">04</div>
+              <h3>Pick up &amp; enjoy</h3>
+              <p>Collect your device or use free delivery. Every repair includes a 90-day warranty.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ COUNTERS ============ -->
+    <section class="section-sm circuit-bg">
+      <div class="container">
+        <div class="row g-4 text-center">
+          <div class="col-6 col-lg-3 reveal">
+            <div class="card-neu neu-pill py-4">
+              <h2 class="grad-text mb-0" data-count="28000" data-suffix="+">0</h2>
+              <span class="text-muted fw-bold">Devices repaired</span>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3 reveal reveal-delay-1">
+            <div class="card-neu neu-pill py-4">
+              <h2 class="grad-text mb-0" data-count="18" data-suffix="">0</h2>
+              <span class="text-muted fw-bold">Certified technicians</span>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3 reveal reveal-delay-2">
+            <div class="card-neu neu-pill py-4">
+              <h2 class="grad-text mb-0" data-count="4.9" data-suffix="">0</h2>
+              <span class="text-muted fw-bold">Average rating</span>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3 reveal reveal-delay-3">
+            <div class="card-neu neu-pill py-4">
+              <h2 class="grad-text mb-0" data-count="60" data-suffix=" min">0</h2>
+              <span class="text-muted fw-bold">Avg. screen repair</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ QUICK LINKS ============ -->
+    <section class="section-sm">
+      <div class="container">
+        <div class="row g-3">
+          <div class="col-md-6 reveal">
+            <a class="img-link" href="brands.html">
+              <img src="assets/img/brands-hero.webp" alt="Brands we repair">
+              <span class="il-arr"><i class="fa-solid fa-arrow-right"></i></span>
+              <span class="il-body">
+                <span class="il-ico"><i class="fa-solid fa-tags"></i></span>
+                <b>Brands we repair</b>
+                <small>Apple, Samsung, Dell, Sony &amp; 7 more — explore every brand we service</small>
+              </span>
+            </a>
+          </div>
+          <div class="col-md-6 reveal reveal-delay-1">
+            <a class="img-link" href="turnaround.html">
+              <img src="assets/img/trunaround-banner.webp" alt="Repair turnaround estimates">
+              <span class="il-arr"><i class="fa-solid fa-arrow-right"></i></span>
+              <span class="il-body">
+                <span class="il-ico"><i class="fa-solid fa-clock"></i></span>
+                <b>Repair turnaround</b>
+                <small>From 60-minute screen fixes to 3-day board repairs — see estimates</small>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TESTIMONIALS ============ -->
+    <section class="section">
+      <div class="container">
+        <div class="sec-head reveal">
+          <span class="sec-eyebrow"><i class="fa-solid fa-comment"></i> Reviews</span>
+          <h2>Repair stories from our customers</h2>
+          <p>Real reviews from real locals who got their devices back in top shape.</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4 reveal">
+            <div class="card-neu t-card">
+              <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+              <blockquote>"Shattered my iPhone screen on a Monday morning. Voltix had it fixed with a genuine panel before lunch. Flawless."</blockquote>
+              <div class="t-user">
+                <img src="assets/img/reviews/emma-lewis.jpg" alt="Emma Lewis">
+                <div><b>Emma Lewis</b><small>iPhone 15 Pro · Screen repair</small></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 reveal reveal-delay-1">
+            <div class="card-neu t-card">
+              <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+              <blockquote>"My MacBook stopped turning on completely. They recovered my thesis data AND fixed the board. Absolute lifesavers."</blockquote>
+              <div class="t-user">
+                <img src="assets/img/reviews/marcus-lee.jpg" alt="Marcus Lee">
+                <div><b>Marcus Lee</b><small>MacBook Pro · Motherboard</small></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 reveal reveal-delay-2">
+            <div class="card-neu t-card">
+              <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+              <blockquote>"Dropped my phone in the pool and panicked. Voltix did the water-damage treatment overnight and it works like new."</blockquote>
+              <div class="t-user">
+                <img src="assets/img/reviews/hannah-park.jpg" alt="Hannah Park">
+                <div><b>Hannah Park</b><small>Galaxy S24 · Water damage</small></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ BLOG PREVIEW ============ -->
+    <section class="section bg-soft">
+      <div class="container">
+        <div class="sec-head reveal">
+          <span class="sec-eyebrow"><i class="fa-solid fa-newspaper"></i> From the blog</span>
+          <h2>Tips to keep your tech alive</h2>
+          <p>Guides, how-tos and troubleshooting from the Voltix bench.</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4 reveal">
+            <article class="card-neu blog-card">
+              <div class="thumb">
+                <img src="assets/img/blog-1.jpg" alt="Battery health tips">
+                <span class="date-chip"><i class="fa-regular fa-calendar me-1"></i>Aug 04, 2026</span>
+              </div>
+              <div class="body">
+                <div class="blog-meta"><span><i class="fa-regular fa-user me-1"></i>Liam Carter</span><span><i class="fa-solid fa-tag me-1"></i>Batteries</span></div>
+                <h3><a href="blog-details.html?post=battery-drain">Why your battery drains fast and how to fix it</a></h3>
+              </div>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4 reveal reveal-delay-1">
+            <article class="card-neu blog-card">
+              <div class="thumb">
+                <img src="assets/img/blog-2.webp" alt="Laptop speed tips">
+                <span class="date-chip"><i class="fa-regular fa-calendar me-1"></i>Jul 22, 2026</span>
+              </div>
+              <div class="body">
+                <div class="blog-meta"><span><i class="fa-regular fa-user me-1"></i>Nina Patel</span><span><i class="fa-solid fa-tag me-1"></i>Laptops</span></div>
+                <h3><a href="blog-details.html?post=laptop-slow">7 reasons your laptop is slow (and cheap fixes)</a></h3>
+              </div>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-4 reveal reveal-delay-2">
+            <article class="card-neu blog-card">
+              <div class="thumb">
+                <img src="assets/img/blog-3.webp" alt="Water damage rescue">
+                <span class="date-chip"><i class="fa-regular fa-calendar me-1"></i>Jul 10, 2026</span>
+              </div>
+              <div class="body">
+                <div class="blog-meta"><span><i class="fa-regular fa-user me-1"></i>Omar Farouk</span><span><i class="fa-solid fa-tag me-1"></i>Emergency</span></div>
+                <h3><a href="blog-details.html?post=water-rescue">Phone fell in water? Do these 3 things immediately</a></h3>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="section-sm">
+      <div class="container">
+        <div class="glass-band reveal">
+          <div class="gb-inner">
+            <h2>Ready to fix your device?</h2>
+            <p>Book a free diagnosis online in under a minute, or walk into any Voltix lab — same-day service on most repairs.</p>
+            <div class="gb-actions">
+              <a class="btn btn-accent btn-lg" href="home-2.html#booking"><i class="fa-solid fa-wrench"></i> Book a Repair</a>
+              <a class="btn btn-ghost btn-lg" href="contact.html"><i class="fa-solid fa-phone"></i> Contact a Lab</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer"></div>
+
+  <button id="backTop" class="back-top" type="button" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

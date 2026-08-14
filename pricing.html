@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Voltix Repair Lab pricing — transparent repair plans and rate tables. Standard or same-day express service with a 90-day warranty.">
+  <title>Pricing — Voltix Repair Lab</title>
+  <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <script>
+    (function () {
+      var root = document.documentElement;
+      try {
+        var theme = localStorage.getItem('theme');
+        if (!theme) theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        root.setAttribute('data-theme', theme);
+        var dir = localStorage.getItem('dir');
+        if (dir === 'rtl' || dir === 'ltr') root.setAttribute('dir', dir);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body data-page="pricing">
+
+  <div id="preloader" aria-hidden="true">
+    <svg class="preloader-bolt" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="#a0113d">
+      <path d="M13 2 4.5 13.5H11L9.5 22 19 9.5h-6.5L13 2Z"/>
+    </svg>
+  </div>
+
+  <div id="navbar"></div>
+
+  <main>
+    <!-- ============ PAGE HEADER ============ -->
+    <section class="page-header">
+      <div class="container">
+        <h1>Repair Pricing</h1>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Pricing</li>
+          </ol>
+        </nav>
+      </div>
+    </section>
+
+    <!-- ============ PLANS ============ -->
+    <section class="section">
+      <div class="container">
+        <div class="sec-head reveal">
+          <span class="sec-eyebrow"><i class="fa-solid fa-dollar-sign"></i> Transparent plans</span>
+          <h2>Simple pricing, no hidden fees</h2>
+          <p>Choose standard turnaround or same-day express. Every plan includes free diagnosis and our 90-day warranty.</p>
+        </div>
+
+        <div class="price-toggle reveal">
+          <span>Standard</span>
+          <button id="priceSwitch" class="switch" type="button" aria-label="Toggle standard or express pricing"></button>
+          <span>Express <span class="badge-soft ms-1"><i class="fa-solid fa-bolt"></i> Same day</span></span>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+          <div class="col-md-6 col-lg-4 reveal">
+            <div class="card-neu price-card">
+              <h3>Screen Fix</h3>
+              <p class="text-muted">Single-screen replacement</p>
+              <div class="amount">$<span data-price="89" data-price-express="119">89</span> <small><span data-billing>Standard</span> · up from</small></div>
+              <ul>
+                <li><i class="ck fa-solid fa-check"></i> Genuine OLED/LCD panel</li>
+                <li><i class="ck fa-solid fa-check"></i> Free data backup</li>
+                <li><i class="ck fa-solid fa-check"></i> 90-day warranty</li>
+                <li class="disabled"><i class="fa-solid fa-xmark"></i> Priority queue</li>
+                <li class="disabled"><i class="fa-solid fa-xmark"></i> Free pickup &amp; delivery</li>
+              </ul>
+              <a class="btn btn-ghost btn-block" href="home-2.html#booking"><i class="fa-solid fa-wrench"></i> Book Repair</a>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 reveal reveal-delay-1">
+            <div class="card-neu price-card popular">
+              <span class="price-flag">Popular</span>
+              <h3>Full Service</h3>
+              <p class="text-muted">Diagnosis + any single repair</p>
+              <div class="amount">$<span data-price="129" data-price-express="169">129</span> <small><span data-billing>Standard</span> · up from</small></div>
+              <ul>
+                <li><i class="ck fa-solid fa-check"></i> Full 30-point diagnostic</li>
+                <li><i class="ck fa-solid fa-check"></i> Free data backup</li>
+                <li><i class="ck fa-solid fa-check"></i> 90-day warranty</li>
+                <li><i class="ck fa-solid fa-check"></i> Priority queue</li>
+                <li class="disabled"><i class="fa-solid fa-xmark"></i> Free pickup &amp; delivery</li>
+              </ul>
+              <a class="btn btn-accent btn-block" href="home-2.html#booking"><i class="fa-solid fa-wrench"></i> Book Repair</a>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 reveal reveal-delay-2">
+            <div class="card-neu price-card">
+              <h3>Home Service</h3>
+              <p class="text-muted">We come to you</p>
+              <div class="amount">$<span data-price="169" data-price-express="209">169</span> <small><span data-billing>Standard</span> · up from</small></div>
+              <ul>
+                <li><i class="ck fa-solid fa-check"></i> On-site diagnosis &amp; repair</li>
+                <li><i class="ck fa-solid fa-check"></i> Free data backup</li>
+                <li><i class="ck fa-solid fa-check"></i> 90-day warranty</li>
+                <li><i class="ck fa-solid fa-check"></i> Priority queue</li>
+                <li><i class="ck fa-solid fa-check"></i> Free pickup &amp; delivery</li>
+              </ul>
+              <a class="btn btn-ghost btn-block" href="contact.html"><i class="fa-solid fa-truck-fast"></i> Request a Visit</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ RATE TABLE ============ -->
+    <section class="section bg-soft">
+      <div class="container">
+        <div class="sec-head reveal">
+          <span class="sec-eyebrow"><i class="fa-solid fa-list"></i> Rate guide</span>
+          <h2>Standard repair rates</h2>
+          <p>Guide prices for the most common jobs. Your exact quote is confirmed after free diagnosis.</p>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-10 reveal">
+            <div class="rate-table">
+              <table class="table table-gh mb-0">
+                <thead>
+                  <tr><th>Repair</th><th>Smartphone</th><th>Laptop</th><th>Tablet</th><th>Turnaround</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Screen replacement</td><td>from $89</td><td>from $149</td><td>from $109</td><td>Under 1 hour</td></tr>
+                  <tr><td>Battery replacement</td><td>from $59</td><td>from $99</td><td>from $79</td><td>30 – 60 min</td></tr>
+                  <tr><td>Charging port</td><td>from $69</td><td>from $89</td><td>from $75</td><td>Same day</td></tr>
+                  <tr><td>Camera repair</td><td>from $79</td><td>from $119</td><td>from $95</td><td>Same day</td></tr>
+                  <tr><td>Motherboard / board-level</td><td>from $129</td><td>from $199</td><td>from $149</td><td>1 – 3 days</td></tr>
+                  <tr><td>Water damage</td><td>from $99</td><td>from $149</td><td>from $119</td><td>1 – 3 days</td></tr>
+                  <tr><td>Virus removal / OS reinstall</td><td>from $49</td><td>from $79</td><td>from $59</td><td>Same day</td></tr>
+                  <tr><td>Data recovery</td><td>from $99</td><td>from $129</td><td>from $109</td><td>1 – 5 days</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="text-center text-muted small mt-3 mb-0"><i class="fa-solid fa-circle-info me-1" style="color:var(--accent)"></i> Prices are per device and may vary by model, brand and parts availability.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="section">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-9">
+            <div class="sec-head reveal">
+              <span class="sec-eyebrow"><i class="fa-solid fa-circle-question"></i> Pricing FAQs</span>
+              <h2>Questions about pricing</h2>
+            </div>
+            <div class="accordion accordion-gh reveal">
+              <div class="accordion-item">
+                <h2 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#pq1">Why is the final quote different from the guide price?</button></h2>
+                <div id="pq1" class="accordion-collapse collapse show" data-bs-parent="#faqPricing"><div class="accordion-body">Guide prices assume common parts. If your model needs a rarer component, or additional damage is found during diagnosis, we quote the exact amount and get your approval before any work starts.</div></div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pq2">Do you charge for diagnosis?</button></h2>
+                <div id="pq2" class="accordion-collapse collapse" data-bs-parent="#faqPricing"><div class="accordion-body">Diagnosis is free when you book a repair. If you decide not to go ahead, a small bench fee of $15 covers the technician's time — it's waived if you proceed.</div></div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#pq3">Is the warranty really 90 days?</button></h2>
+                <div id="pq3" class="accordion-collapse collapse" data-bs-parent="#faqPricing"><div class="accordion-body">Yes — every repair includes a 90-day written warranty on both parts and labour. Board-level repairs carry a 6-month warranty.</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer"></div>
+
+  <button id="backTop" class="back-top" type="button" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

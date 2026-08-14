@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Something big is coming to Voltix Repair Lab — new lab locations, home service and more. Stay tuned.">
+  <title>Coming Soon — Voltix Repair Lab</title>
+  <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <script>
+    (function () {
+      var root = document.documentElement;
+      try {
+        var theme = localStorage.getItem('theme');
+        if (!theme) theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        root.setAttribute('data-theme', theme);
+        var dir = localStorage.getItem('dir');
+        if (dir === 'rtl' || dir === 'ltr') root.setAttribute('dir', dir);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body data-page="coming-soon">
+
+  <div id="preloader" aria-hidden="true">
+    <svg class="preloader-bolt" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="#a0113d">
+      <path d="M13 2 4.5 13.5H11L9.5 22 19 9.5h-6.5L13 2Z"/>
+    </svg>
+  </div>
+
+  <div id="navbar"></div>
+
+  <main>
+    <section class="center-page">
+      <div class="ambient-bg" aria-hidden="true">
+        <span class="orb o1"></span><span class="orb o2"></span><span class="orb o3"></span>
+      </div>
+      <div class="container reveal in">
+        <span class="sec-eyebrow"><i class="fa-solid fa-bolt"></i> Voltix is upgrading</span>
+        <h1 class="h2 mt-3 mb-2">We're powering up something new</h1>
+        <p class="text-muted mx-auto mb-0" style="max-width:520px">New lab locations, home service and a smarter booking app are on the way. Get notified the moment we flip the switch.</p>
+
+        <div class="countdown" id="countdown">
+          <div class="count-box"><b id="cd-days">00</b><span>Days</span></div>
+          <div class="count-box"><b id="cd-hours">00</b><span>Hours</span></div>
+          <div class="count-box"><b id="cd-mins">00</b><span>Minutes</span></div>
+          <div class="count-box"><b id="cd-secs">00</b><span>Seconds</span></div>
+        </div>
+
+        <form class="mx-auto" style="max-width:420px" data-newsletter novalidate aria-label="Get notified">
+          <div class="input-group input-group-wrap">
+            <input class="field" type="email" placeholder="you@email.com" aria-label="Email address">
+            <button class="btn btn-accent" type="submit"><i class="fa-solid fa-bell"></i> Notify Me</button>
+          </div>
+        </form>
+        <p class="news-ok text-muted fw-bold mt-3 mb-0" style="display:none"><i class="fa-solid fa-circle-check me-1" style="color:var(--teal)"></i>You're on the list. Talk soon!</p>
+
+        <div class="mt-4">
+          <a class="btn btn-ghost" href="index.html"><i class="fa-solid fa-house"></i> Back to Home</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer"></div>
+
+  <button id="backTop" class="back-top" type="button" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
