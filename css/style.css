@@ -1551,3 +1551,9 @@ body {
   .bento-item, .bento-item.wide { grid-column: span 12; min-height: 250px; }
   .glass-band { padding: 40px 22px; }
 }
+
+/* Remove floating decorative background elements only. */
+.ambient-bg,
+.cursor-glow {
+  display: none !important;
+}
