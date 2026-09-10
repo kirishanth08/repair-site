@@ -57,7 +57,7 @@
         phone: data.phone || '',
         email: email,
         pass: hash(data.password),
-        role: data.role === 'admin' ? 'admin' : 'customer'
+        role: 'customer'
       });
       writeUsers(users);
       return { ok: true };

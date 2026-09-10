@@ -53,7 +53,7 @@
 
   var session = isCompact ? null : getSession();
   var isAdmin = !!(session && session.role === 'admin');
-  var dashUrl = base + (isAdmin ? 'admin/dashboard.html' : 'dashboard.html');
+  var dashUrl = base + 'admin/dashboard.html';
   var userLabel = isAdmin ? 'Admin' : (session ? session.fname : 'there');
 
   var authBtns = session
@@ -81,6 +81,7 @@
     '  <li><a href="' + base + 'pricing.html">Pricing</a></li>' +
     '  <li><a href="' + base + 'blog.html">Blog</a></li>' +
     '  <li><a href="' + base + 'contact.html">Contact</a></li>' +
+    '  <li><a href="' + dashUrl + '"><i class="fa-solid fa-gauge-high"></i> Dashboard</a></li>' +
     '</ul>';
 
   var html = isCompact

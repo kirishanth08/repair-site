@@ -25,14 +25,6 @@
       } catch (e) {}
     })();
   </script>
-  <script>
-    (function () {
-      try {
-        var s = JSON.parse(localStorage.getItem('vx_session'));
-        if (!s || !s.email || s.role !== 'admin') window.location.replace('login.html');
-      } catch (e) { window.location.replace('login.html'); }
-    })();
-  </script>
 </head>
 <body data-page="admin" data-admin="invoices">
 

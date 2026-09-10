@@ -400,7 +400,10 @@ body.admin-open { overflow: hidden; }
 .hero-stats { display: flex; flex-wrap: wrap; gap: 26px; }
 .hero-stat { display: flex; align-items: center; gap: 12px; }
 .hero-stat b { font-family: var(--font-head); font-size: 1.5rem; color: var(--heading); display: block; line-height: 1; }
-.hero-stat span { font-size: .8rem; color: var(--text-muted); font-weight: 600; }
+.hero-stat span { display: block; margin-top: 6px; font-size: .8rem; color: var(--text-muted); font-weight: 600; }
+
+/* Home 2 hero: stats under CTA — consistent divider + spacing (mirrors Home 1 badges) */
+.hero-short .hero-stats { padding-top: 30px; border-top: 1px dashed rgba(161, 138, 122, .35); }
 
 .hero-visual { position: relative; }
 .hero-visual .neu { padding: 18px; position: relative; z-index: 2; }
@@ -424,7 +427,7 @@ body.admin-open { overflow: hidden; }
   background: var(--bg); box-shadow: var(--inset-1);
 }
 .hero-float b { display: block; font-family: var(--font-head); color: var(--heading); font-size: .8rem; line-height: 1.2; }
-.hero-float small { color: var(--text-muted); font-size: .68rem; font-weight: 600; }
+.hero-float small { color: var(--text); font-size: .68rem; font-weight: 600; }
 
 @keyframes floaty {
   0%, 100% { transform: translateY(0); }
@@ -1213,6 +1216,9 @@ body[data-dash="account"] .card-neu { height: auto; }
 @media (max-width: 1199.98px) {
   .hero-float.f1 { left: 10px; }
   .hero-float.f2 { right: 10px; }
+  .hero-media .hm-ring { width: 120px; height: 120px; inset: -18px -18px auto auto; }
+  .hero-media .hm-chip.c1 { left: 8px; }
+  .hero-media .hm-chip.c2 { right: 8px; }
   .footer-top { grid-template-columns: 1.4fr 1fr 1fr; }
 }
 
@@ -1223,7 +1229,11 @@ body[data-dash="account"] .card-neu { height: auto; }
   .hero { padding: 40px 0 70px; text-align: center; }
   .hero-lead { margin-inline: auto; }
   .hero-cta { justify-content: center; }
+  .hero-badges { justify-content: center; }
   .hero-stats { justify-content: center; }
+  .hero-media { max-width: 560px; margin-inline: auto; }
+  .hero-media .hm-ring { width: 100px; height: 100px; inset: -12px -12px auto auto; }
+  .hero-media .hm-avatars { bottom: -12px; left: 18px; }
   .footer-top { grid-template-columns: 1fr 1fr; gap: 34px; }
   .footer-col { grid-column: span 1; }
   .footer-brand { grid-column: 1 / -1; }
@@ -1234,6 +1244,16 @@ body[data-dash="account"] .card-neu { height: auto; }
   .footer-top { grid-template-columns: 1fr; }
   .hero-float { position: static; }
   .hero-float-wrap { display: flex; flex-direction: column; gap: 12px; margin-top: 20px; }
+  .hero-media .hm-ring { width: 80px; height: 80px; inset: -8px -8px auto auto; border-width: 1.5px; }
+  .hero-media .hm-chip { padding: 8px 12px; gap: 8px; }
+  .hero-media .hm-chip .f-ico { width: 28px; height: 28px; font-size: .8rem; }
+  .hero-media .hm-chip b { font-size: .75rem; }
+  .hero-media .hm-chip small { font-size: .62rem; }
+  .hero-media .hm-chip.c1 { bottom: 16px; left: 8px; }
+  .hero-media .hm-chip.c2 { top: 18px; right: 8px; }
+  .hero-media .hm-avatars { bottom: -10px; left: 12px; padding: 6px 12px 6px 6px; }
+  .hero-media .hm-avatars .av { width: 24px; height: 24px; }
+  .hero-media .hm-avatars small { font-size: .65rem; }
   .count-box { width: 76px; }
   .count-box b { font-size: 1.6rem; }
   .auth-card { padding: 32px 22px; }
@@ -1389,7 +1409,7 @@ body {
    ========================================================================== */
 
 /* ---- Hero: media panel ---- */
-.hero-media { position: relative; }
+.hero-media { position: relative; overflow: hidden; border-radius: var(--r-lg); }
 .hero-media .hm-ring {
   position: absolute; inset: -26px -26px auto auto; width: 150px; height: 150px;
   border: 2px dashed rgba(var(--accent-rgb), .45); border-radius: 50%;
@@ -1421,7 +1441,7 @@ body {
   box-shadow: 0 8px 16px rgba(var(--accent-rgb), .4);
 }
 .hero-media .hm-chip b { display: block; font-family: var(--font-head); font-size: .82rem; color: var(--heading); line-height: 1.15; }
-.hero-media .hm-chip small { color: var(--text-muted); font-size: .68rem; font-weight: 600; }
+.hero-media .hm-chip small { color: var(--text); font-size: .68rem; font-weight: 600; }
 .hero-media .hm-avatars {
   position: absolute; z-index: 2; bottom: -18px; left: 26px;
   display: flex; align-items: center; gap: 8px; padding: 8px 16px 8px 8px; border-radius: 50px;
@@ -1432,7 +1452,11 @@ body {
 .hero-media .hm-avatars small { font-size: .72rem; font-weight: 700; color: var(--text); }
 
 /* Trust badges under hero CTA */
-.hero-badges { display: flex; flex-wrap: wrap; gap: 12px 24px; margin-top: 30px; }
+.hero-badges {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 10px 26px;
+  margin: 0 0 34px; padding-bottom: 26px;
+  border-bottom: 1px dashed rgba(161, 138, 122, .35);
+}
 .hero-badges span { display: inline-flex; align-items: center; gap: 8px; font-size: .85rem; font-weight: 600; color: var(--text-muted); }
 .hero-badges i { color: var(--teal); }
 
@@ -1491,7 +1515,7 @@ body {
 }
 .feat-media .fm-chip .f-ico { width: 34px; height: 34px; border-radius: 10px; flex-shrink: 0; display: grid; place-items: center; font-size: .95rem; color: #fff; background: linear-gradient(135deg, var(--accent), var(--accent-2)); }
 .feat-media .fm-chip b { display: block; font-family: var(--font-head); font-size: .82rem; color: var(--heading); line-height: 1.15; }
-.feat-media .fm-chip small { color: var(--text-muted); font-size: .68rem; font-weight: 600; }
+.feat-media .fm-chip small { color: var(--text); font-size: .68rem; font-weight: 600; }
 .feat-copy h2 { font-size: clamp(1.7rem, 3.2vw, 2.4rem); margin: 12px 0 16px; }
 .feat-copy .lead { color: var(--text-muted); margin-bottom: 22px; }
 .feat-list { list-style: none; padding: 0; margin: 0 0 26px; }
@@ -1522,6 +1546,24 @@ body {
 .glass-band p { color: var(--text-muted); max-width: 560px; margin: 12px auto 28px; }
 .glass-band .gb-actions { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; }
 
+/* Light mode: give the CTA band a clearly-defined card so the background reads
+   while keeping heading, body text and CTA buttons legible. */
+:root:not([data-theme="dark"]) .glass-band {
+  background:
+    radial-gradient(620px 340px at 15% 0%, rgba(var(--accent-rgb), .13), transparent 66%),
+    radial-gradient(560px 320px at 90% 100%, rgba(6, 182, 212, .11), transparent 66%),
+    linear-gradient(135deg, #fffdf6, #f6ead2);
+  box-shadow: var(--shadow-3);
+}
+:root:not([data-theme="dark"]) .glass-band::before {
+  background:
+    radial-gradient(560px 320px at 15% 0%, rgba(var(--accent-rgb), .34), transparent 62%),
+    radial-gradient(520px 300px at 90% 100%, rgba(6, 182, 212, .28), transparent 62%),
+    linear-gradient(120deg, rgba(var(--accent-rgb), .18), rgba(6, 182, 212, .13), rgba(var(--accent-rgb), .2));
+}
+:root:not([data-theme="dark"]) .glass-band::after { border-color: rgba(161, 138, 122, .38); }
+:root:not([data-theme="dark"]) .glass-band p { color: var(--text); }
+
 /* ---- Image quick links ---- */
 .img-link {
   position: relative; display: block; border-radius: var(--r-md); overflow: hidden;
@@ -1541,8 +1583,6 @@ body {
 
 /* ---- Responsive ---- */
 @media (max-width: 991.98px) {
-  .hero-media .hm-chip.c1 { left: 12px; }
-  .hero-media .hm-chip.c2 { right: 12px; }
   .bento-item, .bento-item.wide { grid-column: span 6; }
   .feat-row { grid-template-columns: 1fr; gap: 44px; }
   .feat-row.rev .feat-media { order: 0; }
