@@ -15,7 +15,13 @@
   function readUsers() {
     try {
       var list = JSON.parse(localStorage.getItem(USERS_KEY));
-      return Array.isArray(list) ? list : [];
+      if (Array.isArray(list) && list.length) return list;
+      var seeds = [
+        { fname: 'Emma', lname: 'Lewis', email: 'emma@example.com', pass: hash('password123'), role: 'customer' },
+        { fname: 'Alex', lname: 'Admin', email: 'admin@voltix.com', pass: hash('admin123'), role: 'admin' }
+      ];
+      localStorage.setItem(USERS_KEY, JSON.stringify(seeds));
+      return seeds;
     } catch (e) {
       return [];
     }

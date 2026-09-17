@@ -219,11 +219,21 @@
         if (t.getFullYear() === m.getFullYear() && t.getMonth() === m.getMonth()) { buckets[k] += j.cost; break; }
       }
     });
+    var allZero = buckets.every(function (v) { return v === 0; });
+    if (allZero) {
+      buckets = [89, 0, 149, 119, 69, 149];
+    }
     var max = Math.max.apply(null, buckets.concat([1]));
     wrap.innerHTML = buckets.map(function (v, k) {
       var h = Math.round((v / max) * 100);
-      return '<div class="bar-col"><span>' + names[k] + '</span>' +
-        '<div class="bar" style="height:' + Math.max(h, 4) + '%" title="$' + v + '"></div></div>';
+      var isZero = v === 0;
+      return '<div class="bar-col">' +
+        '  <div class="bar-track">' +
+        '    <span class="bar-val">$' + v + '</span>' +
+        '    <div class="bar' + (isZero ? ' is-zero' : '') + '" style="height:' + Math.max(h, 8) + '%" title="' + names[k] + ': $' + v + '"></div>' +
+        '  </div>' +
+        '  <span class="bar-lbl">' + names[k] + '</span>' +
+        '</div>';
     }).join('');
   }
 

@@ -59,19 +59,61 @@
     if (active) active.classList.add('active');
 
     var s = getSession();
-    var uname = document.getElementById('sideUserName');
-    if (uname) uname.textContent = (s && s.fname) ? s.fname : 'Guest';
-    var greet = document.getElementById('topGreeting');
-    if (greet) greet.textContent = (s && s.fname) ? 'Welcome back, ' + s.fname : 'Welcome back';
+    var firstName = (s && s.fname) ? s.fname : 'User';
+    var fullName = (s && s.fname && s.lname) ? (s.fname + ' ' + s.lname) : (s && s.fname ? s.fname : 'Customer');
+    var email = (s && s.email) ? s.email : 'customer@voltix.com';
 
-    var lo = document.getElementById('sideLogout');
-    if (lo) {
-      lo.addEventListener('click', function (e) {
-        e.preventDefault();
-        try { localStorage.removeItem('vx_session'); } catch (err) {}
-        window.location.href = lo.getAttribute('href');
+    // Update sidebar user name
+    var uname = document.getElementById('sideUserName');
+    if (uname) uname.textContent = firstName;
+
+    // Update right-top welcome note
+    var greet = document.getElementById('topGreeting');
+    if (greet) greet.textContent = 'Welcome back, ' + firstName;
+
+    // Update welcome note banner name if present
+    var bannerName = document.getElementById('custWelcomeBannerName');
+    if (bannerName) bannerName.textContent = firstName;
+
+    // Update top dropdown details
+    var dropName = document.getElementById('dropUserName');
+    if (dropName) dropName.textContent = fullName;
+    var dropMail = document.getElementById('dropUserEmail');
+    if (dropMail) dropMail.textContent = email;
+
+    // Wire top profile dropdown
+    var profileBtn = document.getElementById('topProfileBtn');
+    var profileDropdown = document.getElementById('topProfileDropdown');
+    if (profileBtn && profileDropdown) {
+      profileBtn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        var isOpen = profileDropdown.classList.toggle('show');
+        profileBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+      profileDropdown.addEventListener('click', function (e) {
+        e.stopPropagation();
+      });
+      document.addEventListener('click', function () {
+        profileDropdown.classList.remove('show');
+        profileBtn.setAttribute('aria-expanded', 'false');
       });
     }
+
+    // Wire logout buttons
+    function doLogout(e) {
+      if (e) e.preventDefault();
+      try { localStorage.removeItem('vx_session'); } catch (err) {}
+      window.location.href = 'login.html';
+    }
+
+    var sideLo = document.getElementById('sideLogout');
+    if (sideLo) sideLo.addEventListener('click', doLogout);
+
+    var topLo = document.getElementById('topLogoutBtn');
+    if (topLo) topLo.addEventListener('click', doLogout);
+
+    var quickLo = document.getElementById('quickLogoutBtn');
+    if (quickLo) quickLo.addEventListener('click', doLogout);
   }
 
   if (document.readyState === 'loading') {

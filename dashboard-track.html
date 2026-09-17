@@ -50,14 +50,39 @@
         <div class="d-flex align-items-center gap-3">
           <button class="btn btn-icon side-toggle" id="sideOpen" type="button" aria-label="Open sidebar"><i class="fa-solid fa-bars"></i></button>
           <div>
-            <p class="text-muted mb-1 small" id="topGreeting">Welcome back</p>
             <h1 class="t-title">Track repair</h1>
           </div>
         </div>
-        <div class="d-flex align-items-center gap-2 flex-wrap">
+        <div class="d-flex align-items-center gap-2 flex-wrap ms-auto">
           <button class="theme-toggle" type="button" aria-label="Toggle dark mode"><span class="icon-sun"><i class="fa-solid fa-sun"></i></span><span class="icon-moon"><i class="fa-solid fa-moon"></i></span></button>
           <button class="rtl-toggle" type="button" data-rtl-toggle aria-label="Toggle text direction"><span data-rtl-label>RTL</span></button>
-          <a class="btn btn-accent" href="dashboard-new-repair.html"><i class="fa-solid fa-plus"></i> New Repair</a>
+          <a class="btn btn-accent btn-sm" href="dashboard-new-repair.html"><i class="fa-solid fa-plus"></i> New Repair</a>
+
+          <!-- Right-Top Welcome Note, Profile & Dropdown -->
+          <div class="dash-user-top" id="dashTopUser">
+            <div class="dash-profile-pill d-flex align-items-center gap-2" id="topProfileBtn" role="button" tabindex="0" aria-expanded="false" aria-haspopup="true">
+              <span class="dash-user-avatar"><i class="fa-solid fa-user"></i></span>
+              <div class="dash-user-meta d-none d-sm-block text-start">
+                <span class="dash-greeting-note d-block" id="topGreeting">Welcome back</span>
+                <small class="dash-role-badge">My Profile</small>
+              </div>
+              <i class="fa-solid fa-chevron-down small ms-1 text-muted"></i>
+            </div>
+            <div class="dash-profile-dropdown" id="topProfileDropdown">
+              <div class="dash-dropdown-header">
+                <b class="d-block text-truncate" id="dropUserName">Customer</b>
+                <small class="text-muted text-truncate d-block" id="dropUserEmail">customer@voltix.com</small>
+              </div>
+              <a class="dash-dropdown-item" href="dashboard-account.html"><i class="fa-solid fa-user-gear"></i> My Account &amp; Profile</a>
+              <a class="dash-dropdown-item" href="dashboard-track.html"><i class="fa-solid fa-screwdriver-wrench"></i> Track Repairs</a>
+              <a class="dash-dropdown-item" href="index.html"><i class="fa-solid fa-house"></i> Back to Site</a>
+              <div class="dash-dropdown-divider"></div>
+              <button type="button" class="dash-dropdown-item text-danger" id="topLogoutBtn"><i class="fa-solid fa-right-from-bracket"></i> Log Out</button>
+            </div>
+          </div>
+
+          <!-- Direct Quick Logout Option -->
+          <button type="button" class="btn btn-ghost btn-sm text-danger d-inline-flex align-items-center gap-1" id="quickLogoutBtn" title="Log out of account" aria-label="Log out"><i class="fa-solid fa-right-from-bracket"></i> <span class="d-none d-md-inline">Logout</span></button>
         </div>
       </header>
 

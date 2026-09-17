@@ -359,38 +359,10 @@
     if (backdrop) backdrop.addEventListener('click', function () { setOpen(false); });
   }
 
-  /* ---------- Ambient background parallax ---------- */
+  /* ---------- Ambient background parallax (disabled: keep backgrounds stable) ---------- */
   function ambientBg() {
-    var bg = document.querySelector('.ambient-bg');
-    if (!bg) return;
-    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    var orbs = bg.querySelectorAll('.orb');
-    var glyphs = bg.querySelectorAll('.fx-glyphs i');
-    if (!orbs.length && !glyphs.length) return;
-    var tx = 0, ty = 0, cx = 0, cy = 0, raf = null;
-    window.addEventListener('pointermove', function (e) {
-      tx = e.clientX / window.innerWidth - .5;
-      ty = e.clientY / window.innerHeight - .5;
-      if (!raf) raf = requestAnimationFrame(step);
-    }, { passive: true });
-    function step() {
-      cx += (tx - cx) * .05;
-      cy += (ty - cy) * .05;
-      orbs.forEach(function (o, i) {
-        var d = 20 * (i + 1);
-        o.style.translate = (-cx * d) + 'px ' + (-cy * d) + 'px';
-      });
-      glyphs.forEach(function (g, i) {
-        var d = 14 * (i + 1);
-        g.style.translate = (cx * d) + 'px ' + (cy * d) + 'px';
-      });
-      if (Math.abs(tx - cx) > .002 || Math.abs(ty - cy) > .002) {
-        raf = requestAnimationFrame(step);
-      } else {
-        cx = tx; cy = ty;
-        raf = null;
-      }
-    }
+    // Backgrounds remain completely stable without mouse drift
+    return;
   }
 
   /* ---------- Site-wide ambient background (inject if missing) ---------- */

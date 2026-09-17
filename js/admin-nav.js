@@ -133,6 +133,62 @@
       });
     }
 
+    // Top-right admin profile & logout
+    var topActions = document.querySelector('.admin-top > div:last-child');
+    if (topActions && !document.getElementById('adTopUser')) {
+      var userPill = document.createElement('div');
+      userPill.id = 'adTopUser';
+      userPill.className = 'dash-user-top ms-1';
+      userPill.innerHTML = '' +
+        '<div class="dash-profile-pill d-flex align-items-center gap-2" id="adTopProfileBtn" role="button" tabindex="0" aria-expanded="false">' +
+        '  <span class="dash-user-avatar" style="background:linear-gradient(135deg,var(--gold),#d97706);"><i class="fa-solid fa-user-shield"></i></span>' +
+        '  <div class="dash-user-meta d-none d-sm-block text-start">' +
+        '    <span class="dash-greeting-note d-block" id="adTopGreetingNote">' + greeting() + '</span>' +
+        '    <small class="dash-role-badge">Administrator</small>' +
+        '  </div>' +
+        '  <i class="fa-solid fa-chevron-down small ms-1 text-muted"></i>' +
+        '</div>' +
+        '<div class="dash-profile-dropdown" id="adTopProfileDropdown">' +
+        '  <div class="dash-dropdown-header">' +
+        '    <b class="d-block text-truncate" id="adTopName">' + ((s && s.fname) ? s.fname : 'Admin') + '</b>' +
+        '    <small class="text-muted text-truncate d-block">' + ((s && s.email) ? s.email : 'admin@voltix.com') + '</small>' +
+        '  </div>' +
+        '  <a class="dash-dropdown-item" href="settings.html"><i class="fa-solid fa-gear"></i> Settings</a>' +
+        '  <a class="dash-dropdown-item" href="../index.html"><i class="fa-solid fa-house"></i> Back to Site</a>' +
+        '  <div class="dash-dropdown-divider"></div>' +
+        '  <button type="button" class="dash-dropdown-item text-danger" id="adTopLogoutBtn"><i class="fa-solid fa-right-from-bracket"></i> Log Out</button>' +
+        '</div>';
+      topActions.appendChild(userPill);
+
+      var adQuickLo = document.createElement('a');
+      adQuickLo.href = 'login.html';
+      adQuickLo.className = 'btn btn-ghost btn-sm text-danger d-inline-flex align-items-center gap-1';
+      adQuickLo.id = 'adQuickLogoutBtn';
+      adQuickLo.title = 'Log out';
+      adQuickLo.innerHTML = '<i class="fa-solid fa-right-from-bracket"></i> <span class="d-none d-md-inline">Logout</span>';
+      topActions.appendChild(adQuickLo);
+
+      var btn = document.getElementById('adTopProfileBtn');
+      var drop = document.getElementById('adTopProfileDropdown');
+      if (btn && drop) {
+        btn.addEventListener('click', function (e) {
+          e.stopPropagation();
+          drop.classList.toggle('show');
+        });
+        drop.addEventListener('click', function (e) { e.stopPropagation(); });
+        document.addEventListener('click', function () { drop.classList.remove('show'); });
+      }
+
+      function doAdLogout(e) {
+        if (e) e.preventDefault();
+        try { localStorage.removeItem('vx_session'); } catch (err) {}
+        window.location.href = 'login.html';
+      }
+      var loTop = document.getElementById('adTopLogoutBtn');
+      if (loTop) loTop.addEventListener('click', doAdLogout);
+      adQuickLo.addEventListener('click', doAdLogout);
+    }
+
     var mhost = document.getElementById('adminModal');
     if (mhost) mhost.innerHTML = modalHtml();
   }

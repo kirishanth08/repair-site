@@ -208,6 +208,16 @@
     var el3 = $id('adKpiReady'); if (el3) el3.textContent = ready;
   }
 
+  function renderAdWelcome() {
+    var s = null;
+    try { s = JSON.parse(localStorage.getItem('vx_session')); } catch (e) {}
+    var name = (s && s.fname) ? s.fname : 'Admin';
+    var nameEl = $id('adWelcomeName');
+    if (nameEl) nameEl.textContent = name;
+    var dateEl = $id('adTodayDate');
+    if (dateEl) dateEl.textContent = 'Today: ' + new Date().toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' });
+  }
+
   function renderAdChart(period) {
     var wrap = $id('adChart');
     if (!wrap) return;
@@ -242,10 +252,26 @@
         if (jb.createdAt >= buckets[n].start && jb.createdAt < buckets[n].end) { values[n] += jb.cost; break; }
       }
     });
+
+    // If no jobs fall in this period, provide realistic demo numbers so chart is not all flat zeroes
+    var allZero = values.every(function (v) { return v === 0; });
+    if (allZero) {
+      if (period === 'week') values = [189, 249, 119, 329, 219, 389, 149];
+      else if (period === 'month') values = [890, 1420, 1180, 1690];
+      else values = [4200, 3800, 5100, 4800, 6200, 5900, 7100, 6800, 7400, 8100, 7900, 8600];
+    }
+
     var max = Math.max.apply(null, values.concat([1]));
     wrap.innerHTML = values.map(function (v, n) {
       var h = Math.round((v / max) * 100);
-      return '<div class="bar-col"><span>' + labels[n] + '</span><div class="bar" style="height:' + Math.max(h, 4) + '%" title="$' + v + '"></div></div>';
+      var isZero = v === 0;
+      return '<div class="bar-col">' +
+        '  <div class="bar-track">' +
+        '    <span class="bar-val">$' + v + '</span>' +
+        '    <div class="bar' + (isZero ? ' is-zero' : '') + '" style="height:' + Math.max(h, 8) + '%" title="' + labels[n] + ': $' + v + '"></div>' +
+        '  </div>' +
+        '  <span class="bar-lbl">' + labels[n] + '</span>' +
+        '</div>';
     }).join('');
   }
 
@@ -280,13 +306,13 @@
   function renderAdMessages() {
     var wrap = $id('adMsgList');
     if (!wrap) return;
-    var msgs = readMsgs().slice(0, 3);
-    wrap.innerHTML = msgs.length ? msgs.map(function (m) {
-      return '<div class="d-flex gap-3 align-items-start neu-flat p-3 mb-3">' +
+    var msgs = readMsgs().slice(0, 2);
+    wrap.innerHTML = msgs.length ? msgs.map(function (m, idx) {
+      return '<div class="d-flex gap-3 align-items-start neu-flat p-3 ' + (idx === msgs.length - 1 ? 'mb-0' : 'mb-2') + '">' +
         '<img class="avatar-sm" src="../assets/img/reviews/' + esc(m.avatar) + '" alt="' + esc(m.from) + '">' +
         '<div class="flex-grow-1 min-w-0">' +
         '  <b class="small d-block" style="color:var(--heading)">' + esc(m.from) + ' <span class="text-muted fw-normal">· ' + esc(m.time) + '</span></b>' +
-        '  <p class="small text-muted mb-0">' + esc(m.body) + '</p>' +
+        '  <p class="small text-muted mb-0" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden">' + esc(m.body) + '</p>' +
         '</div>' +
         (m.read ? '' : '<span class="status-dot status-pending"></span>') +
         '</div>';
@@ -294,6 +320,7 @@
   }
 
   function renderDashboard() {
+    renderAdWelcome();
     renderAdKpis();
     renderAdChart('week');
     setupAdChartPills();
